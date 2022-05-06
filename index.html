@@ -24,14 +24,13 @@
                     <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
                         <h1 class="display-4 text-center py-2">Aphex Twin</h1>
                         <p class="lead">
-                          Richard David James (Limerick, Munster, 18 de agosto de 1971), más conocido como Aphex Twin (pronunciado /ˈeɪfeks twɪn/), es un DJ y productor irlandés nacionalizado británico. Fue descrito por el periódico The Guardian en 2001 como "la figura más innovadora e influyente de la música electrónica contemporánea". Fundó el sello discográfico Rephlex Records en 1991 junto a Grant Wilson-Claridge.
-En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas más influyentes de los últimos 25 años.
+                          Richard David James (Limerick, Munster, 18 de agosto de 1971), más conocido como Aphex Twin (pronunciado /ˈeɪfeks twɪn/), es un DJ y productor irlandés nacionalizado británico.
                         </p>
                         <p>
-                            El 10 de abril de 1912 el Titanic zarpó desde Southampton en su viaje inaugural, que tenía por destino final a Nueva York. El barco insumergible cruzó el canal de la Mancha hasta su primera escala, Cherburgo, en
-                            Normandía. Posteriormente viajó hasta el puerto de Queenstown (hoy Cork, Irlanda) para recoger a los últimos pasajeros antes de adentrarse en el océano Atlántico.
+                          Fue descrito por el periódico The Guardian en 2001 como "la figura más innovadora e influyente de la música electrónica contemporánea". Fundó el sello discográfico Rephlex Records en 1991 junto a Grant Wilson-Claridge.
+En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas más influyentes de los últimos 25 años.
                         </p>
-                        <p>De los <a href="https://github.com/datasciencedojo/datasets/blob/master/titanic.csv" target="_blank" class="link-light">registros de 891 pasajeros</a>, podemos obtener algunos datos:</p>
+                        <p>Mediante un <a href="https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json" target="_blank" class="link-light">JSON del registro de sus canciones</a>, podemos obtener algunos datos y crear algunos gráficos:</p>
                     </div>
                 </div>
             </div>
@@ -39,7 +38,7 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
 
         <main class="container">
             <div class="accordion mx-md-5 my-5 rounded-0" id="accordionExample">
-                <!--Edades de pasajeros-->
+                <!--Cantidad de tracks en cada album-->
                 <div class="accordion-item rounded-0">
                     <h2 class="accordion-header bg-dark" id="headingOne">
                         <button class="accordion-button rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Primer Gráfico</button>
@@ -47,7 +46,7 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
                             <p>
-                                Primer gráfico: Explique
+                                Primer gráfico: Cantidad de tracks en cada album
                             </p>
                             <div class="col-md-6 mx-auto mb-3">
                                 <canvas id="primerChart" width="100" height="100"></canvas>
@@ -55,21 +54,21 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                         </div>
                     </div>
                 </div>
-                <!--Pasajeras y pasajeros-->
+                <!--Comparación de las pistas por año-->
                 <div class="accordion-item rounded-0">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Segundo Gráfico</button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
-                            <p>Segundo gráfico: Explique</p>
+                            <p>Segundo gráfico: Comparación de las pistas antes del año 2000 (tracks viejos) y después del 2000 (tracks nuevos)</p>
                             <div class="col-md-6 mx-auto mb-3">
                                 <canvas id="segundoChart" width="100" height="100"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--Clases-->
+                <!--Duración de pistas-->
                 <div class="accordion-item rounded-0">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Tercer Gráfico</button>
@@ -77,7 +76,7 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
                             <p>
-                                Tercer gráfico: Explique
+                                Tercer gráfico: Muestra de pistas que duran menos de 6 minutos (tracks cortos) y aquellos que poseen una mayor duración (tracks largos)
                             </p>
                             <div class="col-md-6 mx-auto mb-3">
                                 <canvas id="tercerChart" width="100" height="100"></canvas>
@@ -93,9 +92,10 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
                             <p>
-                                Cuarto gráfico: Exlique
+                                Cuarto gráfico: Comparación de los decibeles (dB) entre un rango de -15 dB, si es menor, se consideran tracks más melódicos, mientras que si son mayores, son más ruidosos.
                             </p>
-                            <canvas id="cuartoChart" width="100" height="30"></canvas>
+                            <div class="col-md-6 mx-auto mb-3">
+                            <canvas id="cuartoChart" width="100" height="100"></canvas>
                         </div>
                     </div>
                 </div>
@@ -107,9 +107,10 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-black-50">
                             <p>
-                                Quinto gráfico: Exlique
+                                Quinto gráfico: Se señalan aquellas pistas que posean un tempo menor a 110 bpm (tracks lentos) y los de mayor tempo (tracks rápidos)
                             </p>
-                            <canvas id="cuartoChart" width="100" height="30"></canvas>
+                            <div class="col-md-6 mx-auto mb-3">
+                            <canvas id="quintoChart" width="100" height="100"></canvas>
                         </div>
                     </div>
                 </div>
@@ -117,7 +118,6 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
             </div>
             <div class="row">
                 <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
-                    <p>Los registros de 891 representan una parte de los más de 2.400 personas que viajaban en el Titanic aquel fatídico 14 de abril de 1912, cuando la nave choca con el iceberg faltando minutos para la medianoche.</p>
                 </div>
             </div>
         </main>
@@ -127,8 +127,8 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                 <div class="row py-5">
                     <div class="col-sm-10 col-md-8 col-lg-6 mx-auto small text-center">
                         <p>
-                            Fuentes: <a href="https://historia.nationalgeographic.com.es/a/historia-titanic-tragedia-barco-insumergible_16344">La historia del Titanic, la tragedia del barco insumergible</a>,
-                            <a href="https://rpubs.com/paraneda/titanic">RPubs - Titanic</a>, otra y otra más.
+                            Fuentes: <a href="https://es.wikipedia.org/wiki/Aphex_Twin">Aphex Twin en Wikipedia</a>,
+                            <a href="https://github.com/ilokhov/datavis-aphex-twin">Data visualisation of Aphex Twin tracks  por Ivan Lokhov.</a>
                         </p>
                     </div>
                 </div>
@@ -158,17 +158,78 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                 //el fetch
                 const consulta = await fetch("https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json");
                 const data = await consulta.json();
-                //algunas variables para calcular
                 console.log(data);
+                //algunas variables para calcular
+                var album1 = 0;
+                var album2 = 0;
+                var album3 = 0;
+                var album4 = 0;
+                var album5 = 0;
+                var album6 = 0;
+
+                var viejos = 0;
+                var nuevos = 0;
+
+                var cortos = 0;
+                var largos = 0;
+
+                var discreto = 0;
+                var ruidoso = 0;
+
+                var lento = 0;
+                var rapido = 0;
+
+                data.forEach((d) => {
+                if (d.album == "saw85") {
+                    album1 = album1 + 1;
+                } else if (d.album == "saw2") {
+                    album2 = album2 + 1;
+                } else if (d.album == "icbyd") {
+                    album3 = album3 + 1;
+                } else if (d.album == "rdj") {
+                      album4 = album4 + 1;
+                } else if (d.album == "drukqs") {
+                      album5 = album5 + 1;
+                } else if (d.album == "syro") {
+                      album6 = album6 + 1;
+                    }
+
+                if (d.year < 2000) {
+                        viejos = viejos + 1;
+                    } else if (d.year > 2000) {
+                        nuevos = nuevos + 1;
+                    }
+
+                if (d.length < 360) {
+                            cortos = cortos + 1;
+                        } else if (d.length > 360) {
+                            largos = largos + 1;
+                        }
+
+                if (d.db < -15) {
+                  discreto = discreto + 1;
+                } else if (d.db > -15) {
+                  ruidoso = ruidoso + 1;
+                    }
+
+                    if (d.bpm < 110) {
+                      lento = lento + 1;
+                    } else if (d.bpm > 110) {
+                      rapido = rapido + 1;
+                        }
+
+                });
+
+
 
                 //consultando en cada elemento del arreglo
 
-                //edades
+                //tracks de cada album
                 new Chart(document.getElementById("primerChart").getContext("2d"), {
                     type: "doughnut",
                     data: {
                         labels: ["Selected Ambient Works 85-92", "Selected Ambient Works Volume II", "...I Care Because You Do", "Richard D. James Album", "Drukqs", "Syro"],
-                        datasets: [{ data: [23, 23, 32, 43,34, 34], label: "Albumes", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F"] }],
+                        datasets: [{ data: [album1, album2, album3, album4, album5, album6], label: "Albumes", backgroundColor: ["#edf8fb", "#bfd3e6", "#9ebcda", "#8c96c6", "#8856a7", "#810f7c"] }],
                     },
                     options: {
                         animation: false,
@@ -177,6 +238,62 @@ En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas m�
                         }
                         }
                       });
+                    //tracks viejos vs nuevos
+                    new Chart(document.getElementById("segundoChart").getContext("2d"), {
+                          type: "bar",
+                          data: {
+                              labels: ["Tracks viejos", "Tracks nuevos"],
+                              datasets: [{ data: [viejos, nuevos], label: "Tracks", backgroundColor: ["#a6bddb", "#2b8cbe"] }],
+                          },
+                          options: {
+                              animation: false,
+                              layout: {
+                                  padding: 10,
+                              }
+                              }
+                            });
+                      //Comparacion de duracion
+                      new Chart(document.getElementById("tercerChart").getContext("2d"), {
+                            type: "bar",
+                            data: {
+                                labels: ["Tracks cortos", "Tracks largos"],
+                                datasets: [{ data: [cortos, largos], label: "Tracks", backgroundColor: ["#99d8c9", "#2ca25f"] }],
+                            },
+                            options: {
+                                animation: false,
+                                layout: {
+                                    padding: 10,
+                                }
+                                }
+                              });
+                              //Comparacion de ruido
+                              new Chart(document.getElementById("cuartoChart").getContext("2d"), {
+                                    type: "bar",
+                                    data: {
+                                        labels: ["Tracks melódicos", "Tracks ruidosos"],
+                                        datasets: [{ data: [discreto, ruidoso], label: "Tracks", backgroundColor: ["#c994c7", "#dd1c77"] }],
+                                    },
+                                    options: {
+                                        animation: false,
+                                        layout: {
+                                            padding: 10,
+                                        }
+                                        }
+                                      });
+                                      //Comparacion de velocidad
+                                      new Chart(document.getElementById("quintoChart").getContext("2d"), {
+                                            type: "bar",
+                                            data: {
+                                                labels: ["Tracks lentos", "Tracks rápidos"],
+                                                datasets: [{ data: [lento, rapido], label: "Tracks", backgroundColor: ["#bcbddc", "#756bb1"] }],
+                                            },
+                                            options: {
+                                                animation: false,
+                                                layout: {
+                                                    padding: 10,
+                                                }
+                                                }
+                                              });
                     }
 
 
